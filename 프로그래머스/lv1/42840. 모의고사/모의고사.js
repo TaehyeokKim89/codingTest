@@ -22,7 +22,6 @@ function solution(answers) {
             answer[index] = i+1 ; // 1등 수포자는 index+1이고, answer[index]위치에 넣는다.
             index ++;
         }
-    }
-    
+    }    
     return answer;
-}
+}  
