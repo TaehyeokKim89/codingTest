@@ -1,19 +1,16 @@
 function solution(balls, share) {
-    let a = [];
-    let b = [];
-    let c = [];
+    let a = 1;
+    let b = 1;
+    let c = 1;
     let d = balls-share;
     for ( let i =1 ; i <=balls; i++) {
-           a.push(i);    
+           a = a*i;    
     }
     for (let i = 1; i <=share; i++) {
-           b.push(i);    
+           b= b*i;    
     }
     for (let i = 1; i <= d; i++) {
-           c.push(i);                  
+           c= c*i;                 
     }
-    let e = a.reduce((a,b)=> a*b, 1)
-    let f = b.reduce((a,b)=> a*b, 1)
-    let g = c.reduce((a,b)=> a*b, 1)
-    return  Math.round(e/(f*g))
+    return  Math.round(a/(b*c))
 }
