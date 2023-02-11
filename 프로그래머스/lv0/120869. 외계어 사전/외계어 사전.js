@@ -1,12 +1,11 @@
 function solution(spell, dic) {
-    let a = spell.sort()
-    let b=  dic.map((x)=> [...new Set(x)].sort() )
-    let c= b.map((x)=> {
-       return x.filter((y)=>  a.includes(y))
+    let newDic= dic.map((x)=> [...new Set(x)])
+    let filteredDic= newDic.map((x)=> {
+       return x.filter((y)=> spell.includes(y))
     })
-    let d =c.map((x)=> x.length )
-    for (let i =0; i< d.length; i++) {
-        if (d[i]===a.length) {
+    let dicLength =filteredDic.map((x)=> x.length )
+    for (let i =0; i< dicLength.length; i++) {
+        if (dicLength[i]===spell.length) {
             return 1
         }        
     }
